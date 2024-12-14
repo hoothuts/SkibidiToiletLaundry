@@ -9,6 +9,7 @@ use App\Http\Controllers\SessionsController;
 use App\Http\Controllers\CashierController;
 use App\Http\Controllers\PengeluaranController;
 use App\Http\Controllers\PesananController;
+use App\Http\Controllers\RekapController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Password;
 use Illuminate\Support\Facades\Route;
@@ -30,6 +31,7 @@ Route::middleware([Authenticate::class])->group(function () {
 
 	Route::get('/Cashier', [CashierController::class, 'index']);
 	Route::get('/Cashier', [CashierController::class, 'index']);
+	Route::get('/Rekap', [RekapController::class, 'recapitulateIncome']);
 	Route::get('/Pesanan', [PesananController::class, 'index']);
 	Route::post('/pesanan', [PesananController::class, 'store'])->name('pesanan.store');
 	Route::get('/CreatePesanan', [PesananController::class, 'create']);
@@ -45,7 +47,7 @@ Route::middleware([Authenticate::class])->group(function () {
 
 	Route::get('/', [HomeController::class, 'home']);
 	Route::get('dashboard', function () {
-		return view('/Cashier');
+		return view('/dashboard');
 	})->name('dashboard');
 
 	Route::get('profile', function () {

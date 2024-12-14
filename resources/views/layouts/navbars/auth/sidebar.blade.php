@@ -50,6 +50,11 @@
                     <span class="nav-link-text ms-1">Pengeluaran</span>
                 </a>
             </li>
+            <li class="nav-item pb-2">
+                <a class="nav-link {{ Request::is('Rekapitulasi') ? 'active' : '' }}" href="{{ url('/Rekap') }}">
+                    <span class="nav-link-text ms-1">Keuangan</span>
+                </a>
+            </li>
         </ul>
     </div>
 </aside>
