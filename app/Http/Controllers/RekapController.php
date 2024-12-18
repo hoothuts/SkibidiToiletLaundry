@@ -53,12 +53,13 @@ class RekapController extends Controller
 
         // Return view with all data
         $pengeluaran = Pengeluaran::all();
+        $pesanan = Pesanan::all();
         return view('/rekapitulasi', [
             'totalIncome' => $totalIncome,
             'percentageChangeIncome' => $percentageChangeIncome,
             'totalSpending' => $totalSpending,
             'percentageChangeSpending' => $percentageChangeSpending,
-        ], compact('pengeluaran'));
+        ], compact('pengeluaran','pesanan'));
     }
 
     /**

@@ -1,7 +1,7 @@
 @extends('layouts.user_type.auth')
 @section('content')
     <div class="container mt-5">
-        <h2>Create Pesanan</h2>
+        <h2>Catat Pengeluaran</h2>
 
         <!-- Check for success message -->
         @if (session('success'))
