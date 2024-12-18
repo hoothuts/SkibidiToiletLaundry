@@ -20,7 +20,7 @@ return new class extends Migration
             $table->enum('layanan', ['Express','Regular']);
             $table->enum('progress', ['Belum diproses','Dalam proses','Selesai']);
             $table->date('tanggal_masuk');
-            $table->date('berat');
+            $table->integer('berat');
             $table->double('biaya');
             $table->enum('status_pembayaran', ['Lunas','Belum Lunas']);
             $table->timestamps();

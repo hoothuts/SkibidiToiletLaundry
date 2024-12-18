@@ -29,8 +29,8 @@ use Illuminate\Auth\Middleware\Authenticate;
 
 Route::middleware([Authenticate::class])->group(function () {
 
-	Route::get('/Cashier', [CashierController::class, 'index']);
-	Route::get('/Cashier', [CashierController::class, 'index']);
+	Route::get('/dashboard', [CashierController::class, 'index']);
+	Route::get('/dashboard', [CashierController::class, 'index'])->name('cashier.index');
 	Route::get('/Rekap', [RekapController::class, 'recapitulateIncome']);
 	Route::get('/Pesanan', [PesananController::class, 'index']);
 	Route::post('/pesanan', [PesananController::class, 'store'])->name('pesanan.store');
@@ -45,10 +45,7 @@ Route::middleware([Authenticate::class])->group(function () {
 	Route::put('/pengelauran/{id}', [PengeluaranController::class, 'update'])->name('pengeluaran.update');
 
 
-	Route::get('/', [HomeController::class, 'home']);
-	Route::get('dashboard', function () {
-		return view('/dashboard');
-	})->name('dashboard');
+	Route::get('/', [CashierController::class, 'index']);
 
 	Route::get('profile', function () {
 		return view('profile');
@@ -63,8 +60,6 @@ Route::middleware([Authenticate::class])->group(function () {
 	})->name('sign-up');
 
 	Route::get('/logout', [SessionsController::class, 'destroy']);
-	Route::get('/user-profile', [InfoUserController::class, 'create']);
-	Route::post('/user-profile', [InfoUserController::class, 'store']);
 	Route::get('/login', function () {
 		return view('dashboard');
 	})->name('sign-up');

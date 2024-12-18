@@ -35,8 +35,7 @@
                                     {{ $pesanan->progress === 'Belum diproses' ? 'selected' : '' }}>Belum diproses</option>
                                 <option value="Dalam proses" {{ $pesanan->progress === 'Dalam proses' ? 'selected' : '' }}>
                                     Dalam proses</option>
-                                <option value="Selesai" {{ $pesanan->progress === 'Selesai' ? 'selected' : '' }}>Selesai
-                                </option>
+                                <option value="Selesai" {{ $pesanan->progress === 'Selesai' ? 'selected' : '' }}>Selesai</option>
                             </select>
                         </div>
                         <button type="submit" class="btn btn-primary">Ubah</button>

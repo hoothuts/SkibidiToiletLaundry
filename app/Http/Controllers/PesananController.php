@@ -81,7 +81,7 @@ class PesananController extends Controller
     {
         $validated = $request->validate([
             'status_pembayaran' => 'required|in:Lunas,Belum Lunas',
-            'progress' => 'required|in:Belum diproses,Dalam proses, Selesai',
+            'progress' => 'required|in:Belum diproses,Dalam proses,Selesai',
         ]);
 
         // Find the Pesanan record by ID
@@ -89,7 +89,7 @@ class PesananController extends Controller
         $pesanan->fill($validated);
         $pesanan->save();
 
-        return redirect()->back()->with('success', 'Pesanan updated successfully!');
+        return redirect('/pesanan')->back()->with('success', 'Pesanan updated successfully!');
     }
 
 
