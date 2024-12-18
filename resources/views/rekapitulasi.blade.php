@@ -125,12 +125,6 @@
                                         <td class="text-center">
                                             <a href="/pengeluaran/{{ $item->id }}/edit"
                                                 class="btn btn-warning btn-sm ml-2">Edit</a>
-                                            <form action="/pengeluaran/{{ $item->id }}" method="POST">
-                                                @csrf
-                                                @method('DELETE')
-                                                <button type="submit" class="btn btn-danger btn-sm ml-2"
-                                                    onclick="confirmDelete({{ $item->id }})">Hapus</button>
-                                            </form>
                                         </td>
                                     </tr>
                                 @endforeach

@@ -31,13 +31,12 @@ class PesananController extends Controller
     {
         $validated = $request->validate([
             'order_id' => 'required|unique:pesanan,order_id',
-            'cust_id' => 'required|numeric',
             'nama' => 'required|string',
             'jenis' => 'required|in:Setrika,Cuci Setrika,Cuci',
             'layanan' => 'required|in:Express,Regular',
             'berat' => 'required|numeric|min:1',
-            'tanggal_masuk' => 'required|date', // Adjusted for valid date format
-            'status_pembayaran' => 'required|in:Lunas,Belum Lunas', // Corrected validation rule
+            'tanggal_masuk' => 'required|date',
+            'status_pembayaran' => 'required|in:Lunas,Belum Lunas',
         ]);
 
         // Add progress and default status

@@ -19,11 +19,6 @@
             </div>
 
             <div class="mb-3">
-                <label for="cust_id" class="form-label">Customer ID</label>
-                <input type="number" name="cust_id" id="cust_id" class="form-control" required>
-            </div>
-
-            <div class="mb-3">
                 <label for="nama" class="form-label">Nama</label>
                 <input type="text" name="nama" id="nama" class="form-control" required>
             </div>

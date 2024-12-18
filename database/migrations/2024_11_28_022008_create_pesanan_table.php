@@ -14,7 +14,6 @@ return new class extends Migration
         Schema::create('pesanan', function (Blueprint $table) {
             $table->id();
             $table->string('order_id');
-            $table->foreignId('cust_id');
             $table->string('nama');
             $table->enum('jenis', ['Setrika','Cuci Setrika','Cuci']);
             $table->enum('layanan', ['Express','Regular']);

@@ -5,7 +5,7 @@
             <h6>Daftar Pengeluaran</h6>
         </div>
         <div class="card-header">
-            <a href="/CreatePengeluaran" class="btn bg-gradient-primary btn-sm mb-0" type="button">+&nbsp;Tambah Data Pengeluaran</a>
+            <a href="/CreatePengeluaran" class="btn bg-gradient-primary btn-sm mb-0" type="button">+&nbsp;Catat Pengeluaran</a>
         </div>
         <div class="card-body px-0 pt-0 pb-2">
             <div class="table-responsive p-0">
@@ -28,12 +28,6 @@
                                 <td>{{ $item->tanggal }}</td>
                                 <td class="text-center">
                                     <a href="/pengeluaran/{{ $item->id }}/edit" class="btn btn-warning btn-sm ml-2">Edit</a>
-                                    <form action="/pengeluaran/{{ $item->id }}" method="POST">
-                                        @csrf
-                                        @method('DELETE')
-                                        <button type="submit" class="btn btn-danger btn-sm ml-2"
-                                            onclick="confirmDelete({{ $item->id }})">Hapus</button>
-                                    </form>
                                 </td>
                             </tr>
                         @endforeach

@@ -2,7 +2,7 @@
 @section('content')
     <div class="card mb-4">
         <div class="card-header pb-0">
-            <h6>Authors table</h6>
+            <h6>Daftar Pesanan</h6>
         </div>
         <div class="card-header">
             <a href="/CreatePesanan" class="btn bg-gradient-primary btn-sm mb-0" type="button">+&nbsp;Pesanan Baru</a>
@@ -45,12 +45,6 @@
                                 <td>{{ $item->progress }}</td>
                                 <td class="text-center">
                                     <a href="/pesanan/{{ $item->id }}/edit" class="btn btn-warning btn-sm ml-2">Edit</a>
-                                    <form action="/pesanan/{{ $item->id }}" method="POST">
-                                        @csrf
-                                        @method('DELETE')
-                                        <button type="submit" class="btn btn-danger btn-sm ml-2"
-                                            onclick="confirmDelete({{ $item->id }})">Hapus</button>
-                                    </form>
                                 </td>
                             </tr>
                         @endforeach

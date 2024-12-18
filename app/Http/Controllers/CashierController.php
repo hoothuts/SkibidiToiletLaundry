@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Pengeluaran;
 use Illuminate\Http\Request;
 use App\Models\Pesanan;
 
@@ -13,7 +14,8 @@ class CashierController extends Controller
     public function index()
     {
         $pesanan = Pesanan::all();
-        return view('dashboard', compact('pesanan'));
+        $pengeluaran = Pengeluaran::all();
+        return view('dashboard', compact('pesanan','pengeluaran'));
     }
 
     /**
